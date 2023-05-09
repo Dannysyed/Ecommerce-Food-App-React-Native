@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { NavigationProp, ParamListBase } from '@react-navigation/native'
 import IconDetail from '../components/UI/IconDetail'
+import BottomSheets from '../components/UI/BottonSheet'
 
 const HomeScreen: React.FC<{ navigation: NavigationProp<ParamListBase> }> = (prop) => {
     prop.navigation.setOptions({
@@ -18,7 +19,9 @@ const HomeScreen: React.FC<{ navigation: NavigationProp<ParamListBase> }> = (pro
                 <TextInput placeholder='Search any Receipe' style={styles.input} />
             </View>
             <Text style={styles.subTitle}>CHOOSE WHAT TO {"\n"}<Text style={{ color: '#337837' }}>COOK</Text> TODAY</Text>
-            <View></View>
+            {/* <View> */}
+            <BottomSheets />
+            {/* </View> */}
         </View>
     )
 }

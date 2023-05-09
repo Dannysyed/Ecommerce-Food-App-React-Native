@@ -2,8 +2,15 @@ import { StyleSheet, Text, View, ImageBackground, SafeAreaView } from 'react-nat
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import Button from '../components/UI/Button'
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native'
 
-const LoginScreen = () => {
+const LoginScreen: React.FC<{ navigation: NavigationProp<ParamListBase> }> = (prop) => {
+    // let navigation = useNavigation()
+
+    let accountHandle = () => {
+        // navigation.navigate('AccountScreen')
+        prop.navigation.navigate('HomeScreen')
+    }
     return (
         <View style={styles.root}>
             <ImageBackground source={require('../assets/images/bg1.png')} resizeMode='cover' style={styles.ImageBac}>
@@ -11,7 +18,7 @@ const LoginScreen = () => {
 
                     <Text style={styles.Title}>WELCOME</Text>
                     <View>
-                        <Button style={styles.button} onPress={() => { }}>Log in</Button>
+                        <Button style={styles.button} onPress={accountHandle}>Log in</Button>
                         <Text style={styles.innerText}>Create an account</Text>
                     </View>
                     <View style={styles.icons}>
